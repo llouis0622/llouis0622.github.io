@@ -1,22 +1,75 @@
 ---
-layout: archive
+layout: default
+body_class: is-home
 ---
+{%- assign p = site.data.profile -%}
 
-{{ content }}
+<section class="container hero">
+  <div class="hero__top">
+    <img class="avatar" src="{{ p.avatar }}" alt="{{ p.name }} 프로필 사진" width="72" height="72" loading="eager">
+    <div class="hero__id">
+      <p class="hero__name">{{ p.name }} <span class="hero__name-en">{{ p.name_en }}</span></p>
+      <p class="hero__role">{{ p.role }} · {{ p.now.company }} {{ p.now.title }}</p>
+    </div>
+  </div>
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+  <h1 class="hero__headline">{{ p.headline }}</h1>
+  <p class="hero__intro">{{ p.intro }}</p>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+  <div class="hero__actions">
+    <a class="btn btn--primary" href="{{ '/resume/' | relative_url }}">이력서 보기</a>
+    <a class="btn btn--ghost" href="https://github.com/llouis0622" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+    <a class="btn btn--ghost" href="https://www.linkedin.com/in/llouis0622/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+    <a class="btn btn--ghost" href="mailto:{{ p.email }}">이메일</a>
+  </div>
+</section>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
-</div>
+<section class="container section">
+  <div class="section__head">
+    <h2 class="section__title">지금 하는 일</h2>
+    <span class="chip">{{ p.now.since }} –</span>
+  </div>
+  <div class="card card--now">
+    <p class="card--now__org">{{ p.now.company }} · {{ p.now.team }} · {{ p.now.title }}</p>
+    <ul class="list-check">
+      {%- for f in p.now.focus -%}<li>{{ f }}</li>{%- endfor -%}
+    </ul>
+  </div>
+</section>
 
-{% include paginator.html %}
+<section class="container section">
+  <div class="section__head">
+    <h2 class="section__title">하이라이트</h2>
+    <a class="section__more" href="{{ '/projects/' | relative_url }}">전체 프로젝트 →</a>
+  </div>
+  <ul class="grid grid--projects">
+    {%- assign featured = site.data.projects | where: "featured", true | sort: "order" -%}
+    {%- for pr in featured limit: 4 -%}
+      {%- include project-card.html project=pr -%}
+    {%- endfor -%}
+  </ul>
+</section>
+
+<section class="container section">
+  <div class="section__head">
+    <h2 class="section__title">최근 로그</h2>
+    <a class="section__more" href="{{ '/log/' | relative_url }}">전체 보기 →</a>
+  </div>
+  <ul class="post-list">
+    {%- for post in site.posts limit: 5 -%}
+      {%- include post-card.html post=post -%}
+    {%- endfor -%}
+  </ul>
+</section>
+
+<section class="container section">
+  <div class="section__head">
+    <h2 class="section__title">한눈에 보기</h2>
+  </div>
+  <ul class="stats">
+    <li class="stat"><span class="stat__num">99.3<small>%</small></span><span class="stat__label">사내 HR RAG 챗봇 정확도<br>145문항 골든셋</span></li>
+    <li class="stat"><span class="stat__num">0.96</span><span class="stat__label">동넷 경로 랭킹 NDCG@3<br>실제 경로 1,137개</span></li>
+    <li class="stat"><span class="stat__num">+17.5<small>%p</small></span><span class="stat__label">조기경보 AI Recall 개선<br>68.2 → 85.7%</span></li>
+    <li class="stat"><span class="stat__num">1<small>st</small></span><span class="stat__label">KT 디지털인재장학생<br>최우수 프로젝트 · 디인재상</span></li>
+  </ul>
+</section>

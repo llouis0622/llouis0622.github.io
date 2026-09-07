@@ -1,0 +1,30 @@
+{%- comment -%}
+  사용법: {% include project-card.html project=project %}
+{%- endcomment -%}
+{%- assign pr = include.project -%}
+<li class="project-card" data-category="{{ pr.category }}">
+  <div class="project-card__head">
+    <div>
+      <h3 class="project-card__name">{{ pr.name }}</h3>
+      <p class="project-card__tagline">{{ pr.tagline }}</p>
+    </div>
+    <span class="chip chip--muted">{{ pr.category }}</span>
+  </div>
+  <p class="project-card__desc">{{ pr.desc }}</p>
+  <dl class="project-card__facts">
+    <div><dt>기간</dt><dd>{{ pr.period }}</dd></div>
+    <div><dt>역할</dt><dd>{{ pr.role }}</dd></div>
+  </dl>
+  {%- if pr.stack -%}
+    <div class="tags">
+      {%- for s in pr.stack -%}<span class="tag">{{ s }}</span>{%- endfor -%}
+    </div>
+  {%- endif -%}
+  {%- if pr.links and pr.links.size > 0 -%}
+    <div class="project-card__links">
+      {%- for l in pr.links -%}
+        <a class="btn btn--ghost btn--sm" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} <span aria-hidden="true">↗</span></a>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</li>

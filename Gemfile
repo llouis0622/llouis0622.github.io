@@ -1,2 +1,5 @@
 source "https://rubygems.org"
-gemspec
+
+# GitHub Pages와 동일한 Jekyll 환경
+gem "github-pages", group: :jekyll_plugins
+gem "webrick"
