@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────
+#  LLouis — 오신의(Shinui Oh) 개인 홈페이지
+#  GitHub Pages(Jekyll) 설정
+# ─────────────────────────────────────────────
+
+title: LLouis
+tagline: AI Engineer · LLM & RAG
+description: >-
+  고객의 요구를 검증 가능한 AI 솔루션으로 바꾸고, 실제 운영까지 연결하는
+  AI 엔지니어 오신의(Shinui Oh)의 이력서와 활동 기록입니다.
+url: "https://llouis0622.github.io"
+baseurl: ""
+lang: ko
+timezone: Asia/Seoul
+
+author:
+  name: 오신의 (Shinui Oh)
+  email: llouis0622@gmail.com
+  twitter:
+  github: llouis0622
+
+# SEO / 소셜
+logo: /assets/img/avatar.jpg
+social:
+  name: Shinui Oh
+  links:
+    - https://github.com/llouis0622
+    - https://www.linkedin.com/in/llouis0622/
+
+# 빌드
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+  toc_levels: 2..3
+permalink: /log/:title/
+excerpt_separator: "<!--more-->"
+future: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+  posts_limit: 30
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - README.md
+  - _templates
+  - .bundle
+  - .jekyll-cache
+
+# GitHub Pages 기본 테마(primer) 비활성화 — 이 사이트는 자체 레이아웃만 사용합니다.
+theme: null

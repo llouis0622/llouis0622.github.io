@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<article class="container post">
+  <header class="post__header">
+    <a class="backlink" href="{{ '/log/' | relative_url }}">← 로그</a>
+    <div class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %-m월 %-d일" }}</time>
+      {%- if page.category -%}<span class="dot" aria-hidden="true"></span><span>{{ page.category }}</span>{%- endif -%}
+      {%- assign words = content | strip_html | number_of_words -%}
+      {%- assign minutes = words | divided_by: 350 | plus: 1 -%}
+      <span class="dot" aria-hidden="true"></span><span>{{ minutes }}분 읽기</span>
+    </div>
+    <h1 class="post__title">{{ page.title }}</h1>
+    {%- if page.description -%}<p class="post__desc">{{ page.description }}</p>{%- endif -%}
+    {%- if page.tags and page.tags.size > 0 -%}
+      <div class="tags">
+        {%- for tag in page.tags -%}<span class="tag">{{ tag }}</span>{%- endfor -%}
+      </div>
+    {%- endif -%}
+  </header>
+
+  <div class="prose post__body">
+    {{ content }}
+  </div>
+
+  <nav class="post-nav" aria-label="이전 · 다음 글">
+    {%- if page.next -%}
+      <a class="post-nav__item" href="{{ page.next.url | relative_url }}">
+        <span class="post-nav__label">다음 글</span>
+        <span class="post-nav__title">{{ page.next.title }}</span>
+      </a>
+    {%- else -%}<span></span>{%- endif -%}
+    {%- if page.previous -%}
+      <a class="post-nav__item post-nav__item--prev" href="{{ page.previous.url | relative_url }}">
+        <span class="post-nav__label">이전 글</span>
+        <span class="post-nav__title">{{ page.previous.title }}</span>
+      </a>
+    {%- endif -%}
+  </nav>
+</article>

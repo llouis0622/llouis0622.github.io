@@ -1,0 +1,121 @@
+# ─────────────────────────────────────────────
+#  이력서 데이터 — /resume/ 페이지가 이 파일을 읽어 렌더링합니다.
+#  항목을 추가/수정하면 페이지에 바로 반영됩니다.
+# ─────────────────────────────────────────────
+
+updated: 2026-09-07
+
+profile:
+  summary: >-
+    AI 모델링과 RAG 서비스 개발 경험을 바탕으로, 고객의 요구를 실제 사용할 수 있는
+    AI 솔루션으로 구현하는 엔지니어입니다. 데이터 분석과 모델 설계부터 서비스 구현,
+    품질 검증과 운영 고도화까지 AI 서비스의 전 과정을 경험했습니다.
+    기술과 현업 사이에서 요구사항을 구체화하고, 협업을 통해 검증 가능한 결과를
+    끝까지 만들어냅니다.
+
+experience:
+  - company: 동연에스엔티 (DY S&T)
+    title: 제조AI연구소 · AI 연구원
+    period: 2026.08 – 재직 중
+    projects:
+      - name: 사내 HR RAG 챗봇 품질 · 보안 고도화
+        summary: 운영 중인 사내 인사규정 RAG 챗봇의 결함 · 보안 · 검색 품질 개선
+        stack: [Python, RAG, Hybrid Search, Reranker, vLLM, FastAPI, Next.js, Docker]
+        bullets:
+          - "결함 · 보안 개선 : 정적 검토와 재현 테스트로 인증 · 파일 처리 · 스트리밍 · 상태 관리 문제를 찾아 배포 대상 10건 개선"
+          - "문서 검색 개선 : PDF 12종의 추출 결과를 검증하고, 조항 · 표 구조를 보존하는 청킹 비교 실험과 오프라인 평가 체계 구성"
+          - "모델 전환 · 회귀 통제 : 145문항 골든셋 평가로 정확도 99.3%, 중대 오답 · 무응답 0건, 2.9배 빠른 모델을 선정. 프롬프트 회귀는 배포 보류 후 재검증"
+          - "계산형 질문 분리 : 근속기간 · 휴가일수처럼 계산이 필요한 질문은 LLM이 직접 계산하지 않고 규정 조건 검색 → 계산 함수 산출로 분리, 평균 응답시간 약 10초 → 3초대"
+      - name: 현업 ESH 법령 안내 챗봇 RAG 엔진 확장
+        summary: HR RAG 엔진을 환경 · 안전 · 보건 법령 영역으로 재구성
+        stack: [Python, RAG, BM25, Vector Search, Prompt Engineering]
+        bullets:
+          - "업무 확장 : 법령 표현 · 동의어 · 원문 출처 연결 방식을 도메인에 맞게 조정"
+          - "품질 검증 : 15개 기준 질의와 표현 변형을 포함한 45건 전수 통과, 첫 질문 재작성 과정의 검색 왜곡 결함 수정"
+
+selected_projects:
+  - name: B-BOT · 부산 청년 공간 AI 챗봇
+    role: 개발 리드 (KT 디지털인재장학생 부산팀)
+    period: 2025.07 – 2025.08
+    stack: [Python, Flask, React, OpenAI API, RAG, Prompt Engineering, GitHub Pages, Render]
+    bullets:
+      - "고객 협업 : 운영기관 · 지원기관 · KT와 대면 시연 및 발전 방향 회의 진행, 의견 수용 및 서비스 구체화"
+      - "전체 구현 : Frontend, Backend, 크롤러, 데이터 저장, RAG 응답 흐름을 단독으로 연결해 PoC 완성"
+      - "RAG 구조 설계 : 검색 결과 기반 컨텍스트 결합으로 응답 정확도 개선, 메타데이터 필터링 · 재랭킹으로 응답 오류율 18% 개선"
+      - "성과 : 18개 팀 중 최우수 프로젝트상 · 개인 최우수 디지털인재상 수상"
+    links:
+      - label: Live
+        url: https://kt-busan.github.io/busan-chatbot-frontend/
+      - label: GitHub
+        url: https://github.com/KT-Busan
+  - name: 동넷 · 부산 교통약자 맞춤형 경로 추천 서비스
+    role: AI 팀장 (KT × 한국교통안전공단 AI 기반 사회문제해결 프로젝트, 9인 팀)
+    period: 2026.06 – 2026.08
+    stack: [FastAPI, React, TypeScript, PostgreSQL, XGBRanker, LightGBM, SHAP, GeoPandas, OSMnx, AWS ECS, GitHub Actions]
+    bullets:
+      - "서비스 · 검증 : 사용자 조건과 교통 · 경사 · 시설 데이터를 결합, 6개 랭킹 모델과 경로 1,137개 · 평가 6,822개로 NDCG@3 0.9166 ~ 0.9596 확보"
+      - "운영 연결 : 지도 · 교통 API, 공간 데이터, AI 랭킹, Web 서비스를 하나의 배포 파이프라인으로 통합"
+      - "팀 리드 : 팀원 역량에 맞춰 작업을 나누고 주간 회의 · PR 리뷰로 진척 관리, 공단 회의에서 요구사항 확인 · 반영"
+    links:
+      - label: Live
+        url: https://dongnet.kr
+      - label: GitHub
+        url: https://github.com/llouis0622/KT-10
+  - name: 자영업자 조기 위험 예측 AI 시스템
+    role: 모델링 · 서비스
+    period: 2025.12
+    stack: [Python, XGBoost, LightGBM, CatBoost, SHAP, Optuna, Hugging Face]
+    bullets:
+      - "문제 구조화 · 모델링 : 매출 · 이용 · 고객 변동 기반 Risk Score와 47개 피처 설계, 3개 모델 앙상블 · Optuna 최적화 적용"
+      - "성과 : Recall 68.2 → 85.7% (+17.5%p) · Precision 76.5 → 89.3% · AUC-ROC 0.912 → 0.964 · Accuracy 97.2%"
+      - "설명 가능성 : SHAP으로 상위 위험 요인의 기여도를 제시해 예측 결과를 현업 의사결정에 활용할 수 있게 구성, Hugging Face 배포"
+    links:
+      - label: GitHub
+        url: https://github.com/5-Sin-e-Kait/early_warning_ai_v2
+
+skills:
+  - group: LLM / RAG
+    items: [RAG Architecture, Parent-Child Chunking, Hybrid Search, BM25, Vector Search, Reranking, Prompt Engineering, vLLM, LangChain]
+  - group: Modeling
+    items: [Feature Engineering, Cross Validation, Ensemble, XGBoost, LightGBM, CatBoost, SHAP, Optuna, PyTorch, TensorFlow]
+  - group: Software
+    items: [Python, FastAPI, Flask, PostgreSQL, SQLite, BeautifulSoup, React, TypeScript]
+  - group: MLOps / Infra
+    items: [Docker Compose, GitHub Actions, Grafana, Prometheus, Jenkins, AWS ECR/ECS/ALB, Benchmark & Regression Test Design]
+
+research:
+  - name: CS Lab 학부 연구원
+    org: 경성대학교
+    period: 2024.09 – 현재
+    desc: AI 응용 연구 및 알고리즘 스터디 리드 · 논문 분석 및 모델 구조 재현
+  - name: AI&DB Lab 학부 연구원
+    org: 경성대학교
+    period: 2022.02 – 2022.08
+    desc: DBMS / 쿼리 최적화 · 데이터 기반 성능 개선 방법론
+
+awards:
+  - name: KT 디지털인재장학생
+    org: KT
+    year: 2025
+  - name: KT 최우수 디인재상
+    org: KT
+    year: 2025
+  - name: KT 최우수 프로젝트상
+    org: KT
+    year: 2025
+  - name: 학업 우수 장학생
+    org: 경성대학교
+    year: 2022 · 2026
+
+competitions:
+  - name: Dacon 선물 배송 경로 최적화
+    result: Top 12%
+    year: 2024
+
+education:
+  - school: 경성대학교
+    degree: 소프트웨어학 학사 (주전공)
+    period: 2021 – 현재
+  - school: 경성대학교
+    degree: AI수리학 학사 (복수전공)
+    period: 2024 – 현재

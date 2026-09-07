@@ -1,0 +1,180 @@
+# ─────────────────────────────────────────────
+#  프로젝트 카드 데이터 — /projects/ 와 홈의 하이라이트가 이 파일을 읽습니다.
+#  featured: true 인 항목이 홈에 노출됩니다. (order 순 정렬)
+# ─────────────────────────────────────────────
+
+- name: 동넷
+  slug: dongnet
+  tagline: 부산 교통약자 · 이동취약자 맞춤형 경로 추천 PWA
+  period: 2026.06 – 2026.08
+  role: AI 팀장 · 랭킹 모델 · 백엔드
+  category: 서비스
+  featured: true
+  order: 1
+  stack: [FastAPI, React, PostgreSQL, XGBRanker, SHAP, OSMnx, AWS ECS]
+  desc: >-
+    KT × 한국교통안전공단 AI 기반 사회문제해결 프로젝트. 사용자 프로필(고령자 · 장애인 · 임산부 등)과
+    경사 · 그늘 · 계단 · 승강기 · 저상버스 데이터를 결합해 경로를 점수화하고, XGBRanker 기반
+    Learning-to-Rank로 추천 경로 3개와 근거를 제공합니다. 실제 경로 1,137개 · 평가 6,822개로
+    NDCG@3 0.92 ~ 0.96.
+  links:
+    - label: dongnet.kr
+      url: https://dongnet.kr
+    - label: GitHub
+      url: https://github.com/llouis0622/KT-10
+
+- name: B-BOT
+  slug: b-bot
+  tagline: 부산 청년 공간 알리미 AI 챗봇
+  period: 2025.07 – 2025.08
+  role: 개발 리드 · 풀스택 · RAG
+  category: 서비스
+  featured: true
+  order: 2
+  stack: [Flask, React, OpenAI API, RAG, SQLite, GitHub Pages, Render]
+  desc: >-
+    KT 디지털인재장학생 부산팀 프로젝트. 부산 34개 청년공간과 프로그램 정보를 크롤링 · 정제해
+    버튼형 탐색과 GPT-4o RAG 자유 대화로 안내합니다. 부산경제진흥원 · 부산청년센터 시연 피드백을
+    반영해 18개 팀 중 최우수 프로젝트상, 개인 최우수 디지털인재상을 받았습니다.
+  links:
+    - label: Live
+      url: https://kt-busan.github.io/busan-chatbot-frontend/
+    - label: GitHub
+      url: https://github.com/KT-Busan
+
+- name: 자영업자 조기경보 AI
+  slug: early-warning
+  tagline: 카드 거래 데이터로 폐업 위험을 3 ~ 6개월 전에 예측
+  period: 2025.12
+  role: 모델링 · 피처 설계 · 배포
+  category: 모델링
+  featured: true
+  order: 3
+  stack: [XGBoost, LightGBM, CatBoost, SHAP, Optuna, SMOTE]
+  desc: >-
+    매출 · 이용 · 고객 변동 기반 Risk Score와 47개 피처를 설계하고 3개 모델 앙상블과 Optuna 최적화로
+    Recall 68.2 → 85.7%, AUC-ROC 0.912 → 0.964를 달성했습니다. SHAP으로 위험 요인을 설명해
+    현업 의사결정에 쓸 수 있게 구성했습니다.
+  links:
+    - label: GitHub
+      url: https://github.com/5-Sin-e-Kait/early_warning_ai_v2
+
+- name: 사내 HR · ESH RAG 챗봇
+  slug: dy-chatbot
+  tagline: 온프레미스 LLM 기반 사내 규정 · 법령 안내 챗봇 고도화
+  period: 2026.08 – 진행 중
+  role: AI 연구원 · 품질 · 보안 · 모델 전환
+  category: 업무
+  featured: false
+  order: 4
+  stack: [vLLM, Hybrid Search, Reranker, FastAPI, Next.js, Docker, Nginx]
+  desc: >-
+    동연에스엔티 재직 중 담당. 145문항 골든셋으로 모델 전환 벤치마크(정확도 99.3%, 2.9배 속도),
+    표 구조를 보존하는 청킹, 계산형 질문의 결정론 처리, 배포 전 회귀 게이트를 구성했습니다.
+    HR 엔진을 ESH 법령 영역으로 확장해 45건 전수 검증을 통과했습니다.
+  links: []
+
+- name: AIology
+  slug: aiology
+  tagline: 처음 배우는 사람이 한 페이지로 인공지능을 완주하도록 쓴 책
+  period: 2026.09
+  role: 집필 · 코드랩
+  category: 지식베이스
+  featured: true
+  order: 5
+  stack: [Markdown, NumPy, PyTorch, GitHub Pages]
+  desc: >-
+    직선 하나를 긋는 학습 기계에서 GPT · 확산 모델 · 강화학습 · 에이전트까지, 9부 28장과
+    실전 코드랩 20편(NumPy 역전파 · Transformer · GPT · LoRA · RAG · DDPM · PPO · 모델 서빙)으로
+    구성했습니다.
+  links:
+    - label: 읽기
+      url: https://llouis0622.github.io/AI/
+    - label: GitHub
+      url: https://github.com/llouis0622/AI
+
+- name: All of AI
+  slug: all-of-ai
+  tagline: 인공지능 전 영역을 체계적으로 정리한 지식베이스
+  period: 2026.03 – 2026.05
+  role: 집필 · VitePress
+  category: 지식베이스
+  featured: false
+  order: 6
+  stack: [VitePress, KaTeX, Mermaid, GitHub Actions]
+  desc: >-
+    인공지능 기초 → 머신러닝 · 딥러닝 → 생성 모델 · LLM → 강화학습 → 에이전트 → AI 수학 · CS 기초까지
+    12개 Chapter · 28개 Lecture로 정리했습니다.
+  links:
+    - label: 읽기
+      url: https://llouis0622.github.io/all-of-ai/
+    - label: GitHub
+      url: https://github.com/llouis0622/all-of-ai
+
+- name: Algorithm Deep Dive
+  slug: algorithm-deep-dive
+  tagline: 프로그래머스 기준 20 Chapter 알고리즘 스터디 자료
+  period: 2023.12 – 2026.07
+  role: 스터디 리드 · 자료 제작
+  category: 스터디
+  featured: false
+  order: 7
+  stack: [Python, C++]
+  desc: >-
+    경성대 CSLab 부원 대상 알고리즘 · 코딩테스트 스터디. 기초 코드 작성부터 DP Advanced,
+    Union-Find/MST, 플로이드/다익스트라, KMP/Trie까지 챕터별 강의 자료와 문제 풀이를 정리했습니다.
+  links:
+    - label: GitHub
+      url: https://github.com/llouis0622/Algorithm_Deep_Dive
+    - label: 스터디 규칙
+      url: https://github.com/llouis0622/algorithm_study_for_ksu_cslab
+
+- name: Queenz
+  slug: queenz
+  tagline: 둘이서 즐기는 Queens 퍼즐 PWA
+  period: 2026.09
+  role: 1인 개발
+  category: 토이
+  featured: false
+  order: 8
+  stack: [Vanilla JS, PWA, Service Worker]
+  desc: >-
+    5×5 ~ 11×11 유일해가 보장된 500단계 퍼즐. 결정적 시드 기반 생성기와 500단계 전수 클리어 검증,
+    오프라인 캐시, 화이트/다크 테마를 갖춘 PWA입니다.
+  links:
+    - label: Play
+      url: https://llouis0622.github.io/Queenz/
+    - label: GitHub
+      url: https://github.com/llouis0622/Queenz
+
+- name: AI Paper Review
+  slug: ai-paper-review
+  tagline: 인공지능 논문 정리 및 구현
+  period: 2025.01 – 진행 중
+  role: 논문 분석 · 재현
+  category: 스터디
+  featured: false
+  order: 9
+  stack: [PyTorch, NumPy]
+  desc: >-
+    Turing Test · Perceptron · Backpropagation · HMM · SVM · AdaBoost · LSTM · Random Forest 등
+    고전부터 Transformer 계열까지, 논문의 핵심 아이디어와 구현을 함께 정리합니다.
+  links:
+    - label: GitHub
+      url: https://github.com/llouis0622/AI_Paper_Review
+
+- name: CSLab WebPage
+  slug: cslab-web
+  tagline: 경성대 CSLab 연구실 홈페이지 프로젝트
+  period: 2025.04 – 2025.07
+  role: 팀 프로젝트 · 백엔드 · 챗봇
+  category: 서비스
+  featured: false
+  order: 10
+  stack: [React, Spring Boot, FastAPI, PyTorch, Docker]
+  desc: >-
+    게시판 · YouTube API · 회원 관리 · 월별 캘린더 · 로그인 · 챗봇 기능을 갖춘 연구실 웹페이지.
+    매주 정기 세미나로 진행했습니다.
+  links:
+    - label: GitHub Org
+      url: https://github.com/KSU-CSLab

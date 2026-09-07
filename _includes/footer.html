@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__links">
+      {%- for link in site.data.profile.links -%}
+        <a href="{{ link.url }}"{% unless link.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ link.label }}</a>
+      {%- endfor -%}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </div>
+    <p class="site-footer__copy">© {{ site.time | date: "%Y" }} {{ site.data.profile.name }} · {{ site.data.profile.name_en }}</p>
+  </div>
+</footer>

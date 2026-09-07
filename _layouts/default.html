@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ko' }}" data-theme="dark">
+<head>
+  {%- include head.html -%}
+</head>
+<body class="{{ page.body_class | default: layout.body_class | default: '' }}">
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  {%- include header.html -%}
+
+  <main id="main" class="site-main">
+    {{ content }}
+  </main>
+
+  {%- include footer.html -%}
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>
