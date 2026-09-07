@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} 홈">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">{{ site.data.profile.handle }}</span>
+    </a>
+
+    <nav class="nav" aria-label="주요 메뉴">
+      {%- for item in site.data.navigation -%}
+        {%- assign is_active = false -%}
+        {%- if item.url == '/' -%}
+          {%- if page.url == '/' -%}{%- assign is_active = true -%}{%- endif -%}
+        {%- else -%}
+          {%- if page.url contains item.url -%}{%- assign is_active = true -%}{%- endif -%}
+        {%- endif -%}
+        <a class="nav__link{% if is_active %} is-active{% endif %}" href="{{ item.url | relative_url }}"{% if is_active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="테마 전환" title="테마 전환">
+      <svg class="icon icon--sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="icon icon--moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</header>

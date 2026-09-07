@@ -1,0 +1,23 @@
+{%- comment -%}
+  사용법: {% include post-card.html post=post %}
+{%- endcomment -%}
+{%- assign p = include.post -%}
+<li class="post-card" data-category="{{ p.category | default: '기타' }}">
+  <a class="post-card__link" href="{{ p.url | relative_url }}">
+    <div class="post-card__meta">
+      <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y.%m.%d" }}</time>
+      {%- if p.category -%}<span class="dot" aria-hidden="true"></span><span class="post-card__category">{{ p.category }}</span>{%- endif -%}
+    </div>
+    <h3 class="post-card__title">{{ p.title }}</h3>
+    {%- if p.description -%}
+      <p class="post-card__desc">{{ p.description }}</p>
+    {%- else -%}
+      <p class="post-card__desc">{{ p.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>
+    {%- endif -%}
+    {%- if p.tags and p.tags.size > 0 -%}
+      <div class="tags">
+        {%- for tag in p.tags limit: 4 -%}<span class="tag">{{ tag }}</span>{%- endfor -%}
+      </div>
+    {%- endif -%}
+  </a>
+</li>
