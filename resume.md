@@ -24,9 +24,11 @@ body_class: is-resume
       <a href="mailto:{{ p.email }}">{{ p.email }}</a>
       <a href="https://github.com/llouis0622" target="_blank" rel="noopener">github.com/llouis0622</a>
       <a href="https://www.linkedin.com/in/llouis0622/" target="_blank" rel="noopener">linkedin.com/in/llouis0622</a>
+      <a href="https://llouis.notion.site/resume" target="_blank" rel="noopener">llouis.notion.site/resume</a>
     </div>
     <div class="resume__tools no-print">
       <button class="btn btn--ghost btn--sm" type="button" onclick="window.print()">PDF로 저장 · 인쇄</button>
+      <a class="btn btn--ghost btn--sm" href="https://llouis.notion.site/resume" target="_blank" rel="noopener">Notion에서 보기 <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 

@@ -26,6 +26,12 @@ links:
   - label: GitHub
     url: https://github.com/llouis0622
     icon: github
+  - label: Notion 이력서
+    url: https://llouis.notion.site/resume
+    icon: notion
+  - label: AIology
+    url: https://llouis0622.github.io/AI/
+    icon: book
   - label: LinkedIn
     url: https://www.linkedin.com/in/llouis0622/
     icon: linkedin
