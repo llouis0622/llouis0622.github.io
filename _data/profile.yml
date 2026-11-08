@@ -5,9 +5,9 @@ handle: LLouis
 role: AI Engineer
 headline: 고객의 요구를 검증 가능한 AI 솔루션으로 바꾸고, 실제 운영까지 연결합니다.
 intro: >-
-  AI 모델링과 RAG 서비스 개발 경험을 바탕으로, 고객의 요구를 실제 사용할 수 있는
-  AI 솔루션으로 구현하는 엔지니어입니다. 데이터 분석과 모델 설계부터 서비스 구현,
-  품질 검증과 운영 고도화까지 AI 서비스의 전 과정을 경험했습니다.
+  AI 모델링 · RAG · 온톨로지 기반 지식 시스템 개발 경험을 바탕으로, 고객의 요구를 실제
+  사용할 수 있는 AI 솔루션으로 구현하는 엔지니어입니다. 데이터 분석과 모델 설계부터
+  서비스 구현, 품질 검증과 운영 고도화까지 AI 서비스의 전 과정을 경험했습니다.
 location: Busan, Republic of Korea
 email: llouis0622@gmail.com
 avatar: https://avatars.githubusercontent.com/u/84135911?v=4
@@ -18,9 +18,10 @@ now:
   title: AI 연구원
   since: 2026.08
   focus:
-    - 사내 HR · ESH 법령 RAG 챗봇 품질 · 보안 고도화
-    - 제조 AI(예지보전 · 공정 레시피 추천) 사업 사전 준비
-    - 온프레미스 LLM 서빙(vLLM) 벤치마크 · 회귀 테스트 체계
+    - 온톨로지 기반 제조 업무 지식 탐색 · 질의 시스템 설계 · 개발 (업무 의미 복원 엔진, 그래프 · 질의 작업대)
+    - PINN 기반 안전벨트 제조 · 조립 공정 Physical AI 실증 (PINN · Physical AI Agent · 모델 검증 · OT 연계)
+    - 전사 AI 업무 플랫폼 · 지식 관리 체계 설계 (Orca · GitLab · Claude Code · Codex)
+    - 사내 HR · ESH 법령 RAG 챗봇 운영 고도화
 
 links:
   - label: GitHub

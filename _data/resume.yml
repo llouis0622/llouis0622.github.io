@@ -3,7 +3,7 @@
 #  항목을 추가/수정하면 페이지에 바로 반영됩니다.
 # ─────────────────────────────────────────────
 
-updated: 2026-09-07
+updated: 2026-11-08
 
 profile:
   summary: >-
@@ -18,6 +18,27 @@ experience:
     title: 제조AI연구소 · AI 연구원
     period: 2026.08 – 재직 중
     projects:
+      - name: 온톨로지 기반 제조 업무 지식 탐색 · 질의 시스템
+        summary: 업무 의미 복원 엔진 및 그래프 · 질의 작업대 단독 설계 · 개발 (2026.09 – 진행 중)
+        stack: [Python, FastAPI, Oracle, SQLite, SQLGlot, RDFLib, JavaScript, Cytoscape.js, LLM API]
+        bullets:
+          - "업무 의미 복원 : 외래키가 정의되지 않은 Oracle 287개 테이블 · 6,320개 컬럼과 PL/SQL · MES 소스를 분석해 업무 객체 · 관계 후보를 추출하고, 원천 근거 · 신뢰도 · 조회 경로를 관리하는 파이프라인 구현"
+          - "조회 신뢰성 : 사전 실행 검증한 조회와 실행 게이트를 연결해 복합키 누락 · 조인 중복 · 미검증 관계에 따른 오답을 통제하고, 질문 조건이 부족하면 되묻거나 답변을 보류하도록 구성"
+          - "서비스 구현 : 그래프 탐색 · 검색 · 대화 · 관리자 승인 · 반려 · 변경 이력을 통합하고, 35개 테이블 · 약 157만 행의 승인 데이터를 SQLite에 반입해 원천 기록과 조회 근거를 함께 제시"
+          - "추론 확장 : 승인된 Horn 규칙과 명시적 사실을 기반으로 시간 조건 · 상태 충돌 · 가정 변경 비교를 처리하고, 도출된 결론의 전제와 규칙을 추적하는 추론 기능 구현"
+          - "LLM 연계 : Claude 기반 질문 해석과 일반 대화를 연결하고, 자료 조회 · 계산 · 답변은 로컬 엔진이 수행하도록 분리해 원천 데이터의 외부 전송을 제한하고 규칙 기반 대체 경로 구성"
+      - name: PINN 기반 안전벨트 제조 · 조립 공정 Physical AI 실증
+        summary: 안전벨트 제조 및 조립 공정 융합데이터 수집 및 실증 기술개발 (국가 과제, 2026.10 – 진행 중)
+        stack: [PINN, Physical AI Agent, 제조 시계열 데이터, 모델 검증, OT 연계]
+        bullets:
+          - "담당 기술 범위 : 공정별 물리 법칙과 실측 데이터를 결합하는 PINN 품질 예측 · 원인 규정 모델, PI-LAM 조치 후보를 작업자 승인형으로 실행하는 Physical AI Agent, 제조 시계열 데이터 검증과 OT(PLC · Robot) 연계"
+          - "1차년도 : 13개 실증 공정의 CTQ · 물리 변수 · 제어 변수 정의, 제품 · Cycle 단위 데이터 동기화 구조와 Manufacturing Context · Action Dataset(State–Action–Result–Reward) 설계에 참여"
+      - name: 전사 AI 업무 플랫폼 · 지식 관리 체계 설계
+        summary: 회사 AI 서버에서 Orca · Claude Code · Codex 기반 프로젝트별 AI 협업 환경과 지식 자산화 구조 설계 (2026.10 – 진행 중)
+        stack: [Orca, Claude Code, Codex, GitLab, PostgreSQL, pgvector, Docker Compose]
+        bullets:
+          - "구조 설계 : PostgreSQL을 운영 데이터 중심 DB로, 공통 문서 · 스킬 · 룰 · 훅의 원본은 Git 저장소로 두는 지식 축적 → 검토 · 승인 → 프로젝트 배포 흐름 제안"
+          - "의사결정 문서화 : 도입 범위 · 권한 · 계정 · 네트워크 · 에이전트 실행 · 대화 보관 · GitLab/GitHub 운영 · 백업까지 13개 영역 100여 개 결정 질문을 선택지 · 장단점과 함께 정리해 경영진 회의 자료로 제공"
       - name: 사내 HR RAG 챗봇 품질 · 보안 고도화
         summary: 운영 중인 사내 인사규정 RAG 챗봇의 결함 · 보안 · 검색 품질 개선
         stack: [Python, RAG, Hybrid Search, Reranker, vLLM, FastAPI, Next.js, Docker]
@@ -78,8 +99,10 @@ skills:
     items: [RAG Architecture, Parent-Child Chunking, Hybrid Search, BM25, Vector Search, Reranking, Prompt Engineering, vLLM, LangChain]
   - group: Modeling
     items: [Feature Engineering, Cross Validation, Ensemble, XGBoost, LightGBM, CatBoost, SHAP, Optuna, PyTorch, TensorFlow]
+  - group: Knowledge / Ontology
+    items: [Ontology Modeling, RDF / RDFLib, SQL Parsing (SQLGlot), Rule-based Reasoning (Horn), Knowledge Graph UI (Cytoscape.js), Oracle Schema Analysis]
   - group: Software
-    items: [Python, FastAPI, Flask, PostgreSQL, SQLite, BeautifulSoup, React, TypeScript]
+    items: [Python, FastAPI, Flask, Oracle, PostgreSQL, SQLite, BeautifulSoup, React, Next.js, TypeScript]
   - group: MLOps / Infra
     items: [Docker Compose, GitHub Actions, Grafana, Prometheus, Jenkins, AWS ECR/ECS/ALB, Benchmark & Regression Test Design]
 
