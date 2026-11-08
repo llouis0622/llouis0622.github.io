@@ -3,6 +3,52 @@
 #  featured: true 인 항목이 홈에 노출됩니다. (order 순 정렬)
 # ─────────────────────────────────────────────
 
+- name: 온톨로지 기반 제조 업무 지식 탐색 · 질의 시스템
+  slug: ontology-engine
+  tagline: 외래키 없는 ERP/MES 데이터베이스의 업무 의미를 복원하고, 근거 있는 답만 내놓는 질의 작업대
+  period: 2026.09 – 진행 중
+  role: 업무 의미 복원 엔진 · 그래프 · 질의 작업대 단독 설계 · 개발
+  category: 업무
+  featured: true
+  order: 0
+  stack: [FastAPI, Oracle, SQLite, SQLGlot, RDFLib, Cytoscape.js, Claude API]
+  desc: >-
+    동연에스엔티 재직 중 담당. Oracle 287개 테이블 · 6,320개 컬럼과 PL/SQL · MES 소스를 분석해
+    업무 객체 · 관계 후보를 추출하고, 17개 업무 개념 중심의 지식 그래프와 사전 검증된 조회 · 실행 게이트,
+    Horn 규칙 추론, 관리자 승인 · 변경 이력을 갖춘 질의 시스템으로 구현했습니다. 약 157만 행의 승인 데이터를
+    반입해 원천 기록과 조회 근거를 함께 제시합니다.
+  links: []
+
+- name: PINN 기반 안전벨트 공정 Physical AI 실증
+  slug: pinn-physical-ai
+  tagline: 물리 법칙 + 실측 데이터로 품질을 예측하고, 작업자 승인형 Agent로 공정에 되돌리는 폐루프
+  period: 2026.10 – 진행 중
+  role: PINN · Physical AI Agent · 모델 검증 · OT 연계
+  category: 업무
+  featured: false
+  order: 4
+  stack: [PINN, PI-LAM, Physical AI Agent, Digital Twin, 제조 시계열, PLC/OT 연계]
+  desc: >-
+    안전벨트 제조 · 조립 공정 융합데이터 수집 및 실증 기술개발 국가 과제. 13개 실증 공정의 CTQ · 물리 변수 ·
+    제어 변수를 정의하고, 제품 · Cycle 단위 데이터 동기화와 State–Action–Result–Reward 구조의 Action
+    Dataset 설계에 참여하고 있습니다.
+  links: []
+
+- name: 전사 AI 업무 플랫폼 · 지식 관리 체계
+  slug: ai-platform
+  tagline: Orca · Claude Code · Codex 기반 프로젝트별 AI 협업 환경과 지식 자산화 구조
+  period: 2026.10 – 진행 중
+  role: 구조 설계 · 의사결정 문서화
+  category: 업무
+  featured: false
+  order: 5
+  stack: [Orca, Claude Code, Codex, GitLab, PostgreSQL, pgvector, Docker Compose]
+  desc: >-
+    회사 AI 서버에서 여러 프로젝트를 운영하면서 사용 현황을 확인하고, 프로젝트 경험을 전사 공통 자산으로
+    발전시키는 구조를 설계했습니다. Git을 공통 자산의 원본으로, PostgreSQL을 운영 데이터 중심으로 두고,
+    13개 영역 100여 개의 결정 질문을 선택지와 함께 정리해 회의 자료로 제공했습니다.
+  links: []
+
 - name: 동넷
   slug: dongnet
   tagline: 부산 교통약자 · 이동취약자 맞춤형 경로 추천 PWA
@@ -48,7 +94,7 @@
   period: 2025.12
   role: 모델링 · 피처 설계 · 배포
   category: 모델링
-  featured: true
+  featured: false
   order: 3
   stack: [XGBoost, LightGBM, CatBoost, SHAP, Optuna, SMOTE]
   desc: >-
@@ -66,7 +112,7 @@
   role: AI 연구원 · 품질 · 보안 · 모델 전환
   category: 업무
   featured: false
-  order: 4
+  order: 6
   stack: [vLLM, Hybrid Search, Reranker, FastAPI, Next.js, Docker, Nginx]
   desc: >-
     동연에스엔티 재직 중 담당. 145문항 골든셋으로 모델 전환 벤치마크(정확도 99.3%, 2.9배 속도),
@@ -81,7 +127,7 @@
   role: 집필 · 코드랩
   category: 지식베이스
   featured: true
-  order: 5
+  order: 3.5
   stack: [Markdown, NumPy, PyTorch, GitHub Pages]
   desc: >-
     직선 하나를 긋는 학습 기계에서 GPT · 확산 모델 · 강화학습 · 에이전트까지, 9부 28장과
@@ -100,7 +146,7 @@
   role: 집필 · VitePress
   category: 지식베이스
   featured: false
-  order: 6
+  order: 6.5
   stack: [VitePress, KaTeX, Mermaid, GitHub Actions]
   desc: >-
     인공지능 기초 → 머신러닝 · 딥러닝 → 생성 모델 · LLM → 강화학습 → 에이전트 → AI 수학 · CS 기초까지
